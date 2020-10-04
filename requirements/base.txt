@@ -1,0 +1,14 @@
+Django==2.2.13
+wagtail==2.9.3
+psycopg2-binary==2.8.4
+wagtail-django-recaptcha==1.0
+django-pattern-library==0.2.5
+graphene-django>=2.6.0
+#wagtail-grapple==0.4.7
+embedly==0.5.0
+wagtailfontawesome==1.2.1
+django-graphql-jwt==0.3.0
+graphene-django-optimizer==0.6.1
+django-cors-headers==3.2.0
+django-filter==2.2.0
+wagalytics==1.2
