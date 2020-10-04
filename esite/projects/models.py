@@ -72,7 +72,7 @@ class _S_ImageGallery(blocks.StructBlock):
     gallery_image = ImageChooserBlock(required=True, blank=False, help_text="Galerie-Bild")
 
 #> Homepage
-class NewsPage(Page):
+class ProjectsPage(Page):
     headers = StreamField([
         ('h_hero', _H_HeroBlock(icon='image')),
         # ('code', blocks.RawHTMLBlock(null=True, blank=True, classname="full", icon='code'))

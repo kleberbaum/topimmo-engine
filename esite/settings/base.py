@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'esite.user',
     'esite.home',
     'esite.news',
+    'esite.projects',
     'esite.caching',
     'esite.navigation',
     'esite.search',
