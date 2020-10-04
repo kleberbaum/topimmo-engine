@@ -28,7 +28,6 @@ from .types import (  # noqa: E402
 )
 
 import graphql_jwt
-import esite.registration.schema
 from esite.caching.schema import CacheUser
 
 # Register all your schemes for graphql here.
@@ -48,7 +47,6 @@ SnippetsQueryMixin_ = SnippetsQueryMixin()  # type: Any
 
 
 class Query(
-            esite.registration.schema.Query,
             graphene.ObjectType,
             #AuthQueryMixin_,
             #DocumentQueryMixin_,

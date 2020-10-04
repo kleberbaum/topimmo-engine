@@ -129,26 +129,17 @@ class HomePage(Page):
     city = models.CharField(null=True, blank=False, max_length=255)
     zip_code = models.CharField(null=True, blank=False, max_length=255)
     address = models.CharField(null=True, blank=False, max_length=255)
-    telephone = models.CharField(null=True, blank=False, max_length=255)
-    telefax = models.CharField(null=True, blank=False, max_length=255)
-    vat_number = models.CharField(null=True, blank=False, max_length=255)
-    whatsapp_telephone = models.CharField(null=True, blank=True, max_length=255)
-    whatsapp_contactline = models.CharField(null=True, blank=True, max_length=255)
-    tax_id = models.CharField(null=True, blank=False, max_length=255)
-    trade_register_number = models.CharField(null=True, blank=False, max_length=255)
-    court_of_registry = models.CharField(null=True, blank=False, max_length=255)
-    place_of_registry = models.CharField(null=True, blank=False, max_length=255)
-    trade_register_number = models.CharField(null=True, blank=False, max_length=255)
-    ownership = models.CharField(null=True, blank=False, max_length=255)
-    email = models.CharField(null=True, blank=False, max_length=255)
+    telephone = models.CharField(max_length=255)
+    vat_number = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
 
-    copyrightholder = models.CharField(null=True, blank=False, max_length=255)
+    copyrightholder = models.CharField(max_length=255)
 
-    about = RichTextField(null=True, blank=False)
-    privacy = RichTextField(null=True, blank=False)
-    shipping = RichTextField(null=True, blank=False)
-    gtc = RichTextField(null=True, blank=False)
-    cancellation_policy = RichTextField(null=True, blank=False)
+    about = RichTextField()
+    privacy = RichTextField()
+    shipping = RichTextField()
+    gtc = RichTextField()
+    cancellation_policy = RichTextField()
 
     sociallinks = StreamField([
         ('link', blocks.URLBlock(help_text="Important! Format https://www.domain.tld/xyz"))
@@ -201,9 +192,6 @@ class HomePage(Page):
             FieldPanel('zip_code'),
             FieldPanel('address'),
             FieldPanel('telephone'),
-            FieldPanel('telefax'),
-            FieldPanel('whatsapp_telephone'),
-            FieldPanel('whatsapp_contactline'),
             FieldPanel('email'),
             FieldPanel('copyrightholder')
             ],
@@ -211,13 +199,7 @@ class HomePage(Page):
         ),
         MultiFieldPanel(
             [
-            FieldPanel('vat_number'),
-            FieldPanel('tax_id'),
-            FieldPanel('trade_register_number'),
-            FieldPanel('court_of_registry'),
-            FieldPanel('place_of_registry'),
-            FieldPanel('trade_register_number'),
-            FieldPanel('ownership')
+            FieldPanel('vat_number')
             ],
             heading="legal",
         ),
