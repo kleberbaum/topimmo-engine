@@ -198,9 +198,8 @@ WAGTAILSEARCH_BACKENDS = {
 GRAPHQL_API = {
     'APPS': [
         'home',
-        'kaffeerudel',
-        'registration',
-        'survey',
+        'news',
+        'projects'
     ],
     'PREFIX': {
     },
