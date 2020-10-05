@@ -68,8 +68,13 @@ class _S_ContentLeft(blocks.StructBlock):
     content_left_lead = blocks.CharBlock(required=False, help_text="Content-Left Untertitel")
     content_left_text = blocks.RichTextBlock(label='Text', required=False, help_text="Content-Left Text")
 
-class _S_ImageGallery(blocks.StructBlock):
+class GalleryImage(blocks.StructBlock):
     gallery_image = ImageChooserBlock(required=True, blank=False, help_text="Galerie-Bild")
+
+class _S_ImageGallery(blocks.StructBlock):
+    gallery_images = blocks.StreamBlock([
+        ('image', GalleryImage(required=False, icon='fa-info'))
+    ], required=True, help_text="Bilder-Galerie")
 
 #> Homepage
 class ProjectsPage(Page):
