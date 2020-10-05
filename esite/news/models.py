@@ -69,13 +69,17 @@ class _S_ContentLeft(blocks.StructBlock):
     content_left_lead = blocks.CharBlock(required=False, help_text="Content-Left Untertitel")
     content_left_text = blocks.RichTextBlock(label='Text', required=False, help_text="Content-Left Text")
 
-class GalleryImage(blocks.StructBlock):
+# class GalleryImage(blocks.StructBlock):
+#     gallery_image = ImageChooserBlock(required=True, blank=False, help_text="Galerie-Bild")
+
+# class _S_ImageGallery(blocks.StructBlock):
+#     gallery_images = blocks.StreamBlock([
+#         ('image', GalleryImage(required=False, icon='fa-info'))
+#     ], required=True, help_text="Bilder-Galerie")
+
+class _G_GalleryBlock(blocks.StructBlock):
     gallery_image = ImageChooserBlock(required=True, blank=False, help_text="Galerie-Bild")
 
-class _S_ImageGallery(blocks.StructBlock):
-    gallery_images = blocks.StreamBlock([
-        ('image', GalleryImage(required=False, icon='fa-info'))
-    ], required=True, help_text="Bilder-Galerie")
 
 #> Homepage
 class NewsPage(Page):
@@ -88,7 +92,11 @@ class NewsPage(Page):
         ('s_contentcenter', _S_ContentCenter(icon='fa-info')),
         ('s_contentright', _S_ContentRight(icon='fa-info')),
         ('s_contentleft', _S_ContentLeft(icon='fa-info')),
-        ('s_imagegallery', _S_ImageGallery(icon='fa-info'))
+        # ('s_imagegallery', _S_ImageGallery(icon='fa-info'))
+    ], null=True, blank=True)
+
+    gallery = StreamField([
+        ('g_gallery', _G_GalleryBlock(icon='fa-info'))
     ], null=True, blank=True)
 
     # footers = StreamField([
@@ -104,6 +112,7 @@ class NewsPage(Page):
     main_content_panels = [
         StreamFieldPanel('headers'),
         StreamFieldPanel('sections'),
+        StreamFieldPanel('gallery'),
         # StreamFieldPanel('footers')
     ]
 
