@@ -111,6 +111,7 @@ class _S_NewsBlock(blocks.StructBlock):
 class _S_ContentCenter(blocks.StructBlock):
     content_center_head = blocks.CharBlock(required=False, help_text="Content-Center Header")
     content_center_lead = blocks.CharBlock(required=False, help_text="Content-Center Untertitel")
+    content_center_text = blocks.RichTextBlock(label='Text', required=False, help_text="Content-Center Text")
     
 class _S_ContentRight(blocks.StructBlock):
     content_right_img = ImageChooserBlock(required=False, help_text="Content-Right Titelbild")
