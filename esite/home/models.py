@@ -130,17 +130,17 @@ class HomePage(Page):
     city = models.CharField(null=True, blank=False, max_length=255)
     zip_code = models.CharField(null=True, blank=False, max_length=255)
     address = models.CharField(null=True, blank=False, max_length=255)
-    telephone = models.CharField(max_length=255)
-    vat_number = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
+    telephone = models.CharField(blank=True, max_length=255)
+    vat_number = models.CharField(blank=True, max_length=255)
+    email = models.CharField(blank=True, max_length=255)
 
-    copyrightholder = models.CharField(max_length=255)
+    copyrightholder = models.CharField(blank=True, max_length=255)
 
-    about = RichTextField()
-    privacy = RichTextField()
-    shipping = RichTextField()
-    gtc = RichTextField()
-    cancellation_policy = RichTextField()
+    about = RichTextField(blank=True)
+    privacy = RichTextField(blank=True)
+    shipping = RichTextField(blank=True)
+    gtc = RichTextField(blank=True)
+    cancellation_policy = RichTextField(blank=True)
 
     sociallinks = StreamField([
         ('link', blocks.URLBlock(help_text="Important! Format https://www.domain.tld/xyz"))
