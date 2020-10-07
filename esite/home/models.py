@@ -52,7 +52,8 @@ class Button(models.Model):
 class _H_HeroBlock(blocks.StructBlock):
     slide_image = ImageChooserBlock(required=True, blank=False, help_text="Großes, hochauflösendes Titelbild")
     slide_head = blocks.CharBlock(required=False, help_text="Titlebild-Text")
-    slide_button = SnippetChooserBlock(Button, required=False, help_text="Titelbild-Button")
+    slide_page = blocks.PageChooserBlock(required=False, help_text="Projektseite")
+    # slide_button = SnippetChooserBlock(Button, required=False, help_text="Titelbild-Button")
 
 class FeatureFeatureBlock(blocks.StructBlock):
     feature_image = ImageChooserBlock(required=True, help_text="Icon, um eine angebotene Leistung darzustellen")
@@ -86,12 +87,13 @@ class _S_PartnersBlock(blocks.StructBlock):
 
 class ReferencesReferenceBlock(blocks.StructBlock):
     ref_img = ImageChooserBlock(required=True, help_text="Referenz-Titelbild")
-    ref_link = SnippetChooserBlock(Button, required=False, help_text="Referenz-Unterseite")
+    ref_link = blocks.PageChooserBlock(required=False, help_text="Projektseite")
+    # ref_link = SnippetChooserBlock(Button, required=False, help_text="Referenz-Unterseite")
     ref_head = blocks.CharBlock(required=False, help_text="Referenz-Header")
     ref_lead = blocks.CharBlock(required=False, help_text="Referenz-Untertitel")
 
 class _S_ReferencesBlock(blocks.StructBlock):
-    ref = blocks.StreamBlock([
+    references = blocks.StreamBlock([
         ('reference', ReferencesReferenceBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Referenzen")
     color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
@@ -107,7 +109,8 @@ class NewsNewsBlock(blocks.StructBlock):
     news_img = ImageChooserBlock(required=True, help_text="News-Titelbild")
     news_head = blocks.CharBlock(required=False, help_text="News-Header")
     news_text = blocks.RichTextBlock(label='Text', required=True, help_text="Kurze Beschreibung der News")
-    news_button = SnippetChooserBlock(Button, required=False, help_text="News-Artikel")
+    news_page = blocks.PageChooserBlock(required=False, help_text="News-Artikel")
+    # news_button = SnippetChooserBlock(Button, required=False, help_text="News-Artikel")
 
 class _S_NewsBlock(blocks.StructBlock):
     news = blocks.StreamBlock([
@@ -119,7 +122,8 @@ class ProjectsProjectBlock(blocks.StructBlock):
     project_img = ImageChooserBlock(required=True, help_text="Projekt-Titelbild")
     project_head = blocks.CharBlock(required=True, help_text="Projekt-Header")
     project_lead = blocks.CharBlock(required=False, help_text="Projekt-Untertitel")
-    project_button = SnippetChooserBlock(Button, required=False, help_text="Projektseite")
+    project_page = blocks.PageChooserBlock(required=False, help_text="Projektseite")
+    # SnippetChooserBlock(Button, required=False, help_text="Projektseite")
 
 class _S_ProjectsBlock(blocks.StructBlock):
     projects = blocks.StreamBlock([
