@@ -65,7 +65,7 @@ class _S_FeatureBlock(blocks.StructBlock):
     ], null=True, required=True, help_text='Füge zwischen einer und drei angebotenen Leistungen hinzu', max_num=3)
 
 class MapsCoordBlock(blocks.StructBlock):
-    coordinate = blocks.CharBlock(required=True, help_text="Gebe hier die Google-Maps-Koordinaten eines Projektes an")
+    coordinate = blocks.CharBlock(required=True, help_text="Gebe hier die Google-Maps-Koordinaten eines Projektes an (Beispiel: 46.6120061,13.916085)")
 
 class _S_MapsBlock(blocks.StructBlock):
     coordinates = blocks.StreamBlock([
