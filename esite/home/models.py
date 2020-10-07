@@ -77,8 +77,8 @@ class PartnersPartnerBlock(blocks.StructBlock):
     partner_link = blocks.CharBlock(required=False, help_text="URL der Partner-Website")
 
 class _S_PartnersBlock(blocks.StructBlock):
-    coordinates = blocks.StreamBlock([
-        ('coordinate', MapsCoordBlock(required=False, icon='fa-info'))
+    partners = blocks.StreamBlock([
+        ('partner', PartnersPartnerBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Liste hier Partnerunternehmen auf")
 
 class ReferencesReferenceBlock(blocks.StructBlock):
