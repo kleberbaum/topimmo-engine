@@ -102,11 +102,23 @@ class NewsNewsBlock(blocks.StructBlock):
     news_img = ImageChooserBlock(required=True, help_text="News-Titelbild")
     news_head = blocks.CharBlock(required=False, help_text="News-Header")
     news_text = blocks.RichTextBlock(label='Text', required=True, help_text="Kurze Beschreibung der News")
+    news_button = SnippetChooserBlock(Button, required=False, help_text="News-Artikel")
 
 class _S_NewsBlock(blocks.StructBlock):
     news = blocks.StreamBlock([
         ('news', NewsNewsBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Neuigkeiten zu Projekten")
+
+class ProjectsProjectBlock(blocks.StructBlock):
+    project_img = ImageChooserBlock(required=True, help_text="Projekt-Titelbild")
+    project_head = blocks.CharBlock(required=True, help_text="Projekt-Header")
+    project_lead = blocks.CharBlock(required=False, help_text="Projekt-Untertitel")
+    project_button = SnippetChooserBlock(Button, required=False, help_text="Projektseite")
+
+class _S_ProjectsBlock(blocks.StructBlock):
+    projects = blocks.StreamBlock([
+        ('projects', ProjectsProjectBlock(required=False, icon='fa-info'))
+    ], required=True, help_text="Unsere Projekte")
 
 class _S_ContentCenter(blocks.StructBlock):
     content_center_head = blocks.CharBlock(required=False, help_text="Content-Center Header")
@@ -165,6 +177,7 @@ class HomePage(Page):
         ('s_references', _S_ReferencesBlock(icon='fa-info')),
         ('s_about', _S_AboutBlock(icon='fa-info')),
         ('s_news', _S_NewsBlock(icon='fa-info')),
+        ('s_projects', _S_ProjectsBlock(icon='fa-info')),
         ('s_contentcenter', _S_ContentCenter(icon='fa-info')),
         ('s_contentright', _S_ContentRight(icon='fa-info')),
         ('s_contentleft', _S_ContentLeft(icon='fa-info'))
