@@ -38,6 +38,8 @@ from esite.utils.views import favicon, robots
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from .redirect import redirect_view
+
 urlpatterns = [
     #path('django-admin/', admin.site.urls),
     path('admin/', include(wagtailadmin_urls)),
@@ -74,6 +76,7 @@ urlpatterns += [
 #    ]
 
 urlpatterns += [
+    url(r'^$', redirect_view),
     url(r'', include(wagtail_urls)),
 ]
 
