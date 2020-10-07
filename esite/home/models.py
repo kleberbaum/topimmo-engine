@@ -63,6 +63,7 @@ class _S_FeatureBlock(blocks.StructBlock):
     features = blocks.StreamBlock([
         ('feature', FeatureFeatureBlock(null=True, blank=False, required=False, icon='fa-info'))
     ], null=True, required=True, help_text='Füge zwischen einer und drei angebotenen Leistungen hinzu', max_num=3)
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class MapsCoordBlock(blocks.StructBlock):
     coordinate = blocks.CharBlock(required=True, help_text="Gebe hier die Google-Maps-Koordinaten eines Projektes an (Beispiel: 46.6120061,13.916085)")
@@ -71,6 +72,7 @@ class _S_MapsBlock(blocks.StructBlock):
     coordinates = blocks.StreamBlock([
         ('coordinate', MapsCoordBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Zeige die Projekt-Locations in einer Map an")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class PartnersPartnerBlock(blocks.StructBlock):
     partner_img = ImageChooserBlock(required=True, help_text="Partner-Logo")
@@ -80,6 +82,7 @@ class _S_PartnersBlock(blocks.StructBlock):
     partners = blocks.StreamBlock([
         ('partner', PartnersPartnerBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Liste hier Partnerunternehmen auf")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class ReferencesReferenceBlock(blocks.StructBlock):
     ref_img = ImageChooserBlock(required=True, help_text="Referenz-Titelbild")
@@ -91,12 +94,14 @@ class _S_ReferencesBlock(blocks.StructBlock):
     ref = blocks.StreamBlock([
         ('reference', ReferencesReferenceBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Referenzen")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class _S_AboutBlock(blocks.StructBlock):
     about_img = ImageChooserBlock(required=False, help_text="Portraitfoto")
     about_head = blocks.CharBlock(required=False, help_text="Über mich-Header")
     about_lead = blocks.CharBlock(required=False, help_text="Untertitel")
     about_text = blocks.RichTextBlock(label='Text', required=True, help_text="Beschreibung Über Mich")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class NewsNewsBlock(blocks.StructBlock):
     news_img = ImageChooserBlock(required=True, help_text="News-Titelbild")
@@ -108,6 +113,7 @@ class _S_NewsBlock(blocks.StructBlock):
     news = blocks.StreamBlock([
         ('news', NewsNewsBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Neuigkeiten zu Projekten")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class ProjectsProjectBlock(blocks.StructBlock):
     project_img = ImageChooserBlock(required=True, help_text="Projekt-Titelbild")
@@ -119,23 +125,27 @@ class _S_ProjectsBlock(blocks.StructBlock):
     projects = blocks.StreamBlock([
         ('projects', ProjectsProjectBlock(required=False, icon='fa-info'))
     ], required=True, help_text="Unsere Projekte")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class _S_ContentCenter(blocks.StructBlock):
     content_center_head = blocks.CharBlock(required=False, help_text="Content-Center Header")
     content_center_lead = blocks.CharBlock(required=False, help_text="Content-Center Untertitel")
     content_center_text = blocks.RichTextBlock(label='Text', required=False, help_text="Content-Center Text")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
     
 class _S_ContentRight(blocks.StructBlock):
     content_right_img = ImageChooserBlock(required=False, help_text="Content-Right Titelbild")
     content_right_head = blocks.CharBlock(required=False, help_text="Content-Right Header")
     content_right_lead = blocks.CharBlock(required=False, help_text="Content-Right Untertitel")
     content_right_text = blocks.RichTextBlock(label='Text', required=False, help_text="Content-Right Text")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class _S_ContentLeft(blocks.StructBlock):
     content_left_img = ImageChooserBlock(required=False, help_text="Content-Left Titelbild")
     content_left_head = blocks.CharBlock(required=False, help_text="Content-Left Header")
     content_left_lead = blocks.CharBlock(required=False, help_text="Content-Left Untertitel")
     content_left_text = blocks.RichTextBlock(label='Text', required=False, help_text="Content-Left Text")
+    color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 #> Homepage
 class HomePage(Page):
