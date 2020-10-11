@@ -30,6 +30,8 @@ from .types import (  # noqa: E402
 import graphql_jwt
 from esite.caching.schema import CacheUser
 
+import esite.requests.schema
+
 # Register all your schemes for graphql here.
 
 # api version
@@ -47,6 +49,7 @@ SnippetsQueryMixin_ = SnippetsQueryMixin()  # type: Any
 
 
 class Query(
+            esite.requests.schema.Query,
             graphene.ObjectType,
             #AuthQueryMixin_,
             #DocumentQueryMixin_,
@@ -81,7 +84,8 @@ def mutation_parameters() -> dict:
 
 
 Mutations = type("Mutation",
-                 (graphene.ObjectType,),
+                 (esite.requests.schema.Mutation,
+                 graphene.ObjectType,),
                  mutation_parameters()
                  )
 
