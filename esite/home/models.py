@@ -86,11 +86,11 @@ class _S_PartnersBlock(blocks.StructBlock):
     color = blocks.CharBlock(required=False, help_text="Hex-Farbcode des Hintergrundes (Beispiel: #3c3a40)")
 
 class ReferencesReferenceBlock(blocks.StructBlock):
-    ref_img = ImageChooserBlock(required=True, help_text="Referenz-Titelbild")
-    ref_link = blocks.PageChooserBlock(required=False, help_text="Projektseite")
+    reference_img = ImageChooserBlock(required=True, help_text="Referenz-Titelbild")
+    reference_link = blocks.PageChooserBlock(required=False, help_text="Projektseite")
     # ref_link = SnippetChooserBlock(Button, required=False, help_text="Referenz-Unterseite")
-    ref_head = blocks.CharBlock(required=False, help_text="Referenz-Header")
-    ref_lead = blocks.CharBlock(required=False, help_text="Referenz-Untertitel")
+    reference_head = blocks.CharBlock(required=False, help_text="Referenz-Header")
+    reference_lead = blocks.CharBlock(required=False, help_text="Referenz-Untertitel")
 
 class _S_ReferencesBlock(blocks.StructBlock):
     references = blocks.StreamBlock([
