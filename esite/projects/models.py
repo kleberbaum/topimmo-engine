@@ -126,6 +126,7 @@ class ProjectsPage(Page):
     price_max = models.IntegerField(null=True, blank=True)
     buy_available = models.BooleanField()
     rent_available = models.BooleanField()
+    coordinates = models.CharField(null=True, blank=True, max_length=255)
 
     sections = StreamField([
         ('s_info', _S_InfoBlock(icon='fa-info')),
@@ -159,6 +160,7 @@ class ProjectsPage(Page):
         FieldPanel('price_max'),
         FieldPanel('buy_available'),
         FieldPanel('rent_available'),
+        FieldPanel('coordinates'),
         StreamFieldPanel('sections'),
         StreamFieldPanel('gallery'),
         StreamFieldPanel('flats')
