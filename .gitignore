@@ -2,6 +2,7 @@
 # Docker environment
 .env
 venv
+.venv
 
 # Django environments
 linux-venv/
