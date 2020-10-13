@@ -240,3 +240,5 @@ class Folder(Page):
     edit_handler = TabbedInterface([
         ObjectList(Page.content_panels, heading='Main'),
     ])
+
+    preview_modes = []
