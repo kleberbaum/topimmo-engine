@@ -1,211 +1,215 @@
 header {
-    background: #1976d2;  /* 4c7fa7 */
-  }
-  .wagtail-logo-container__desktop {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin: 0 auto;
-    transition: all .25s cubic-bezier(.28,.15,0,2.1);
-  }
+  background: #0096d6; /* 4c7fa7 */
+}
+.wagtail-logo-container__desktop {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: all 0.25s cubic-bezier(0.28, 0.15, 0, 2.1);
+}
 
-  a {
-    color: #1976d2;
-  }
-  
-  a:hover {
-    color: #1f4f80; /* 2a3c4a */
-  }
-  
-  .button {
-    background-color: #1976d2;
-    border: 1px solid #1976d2;
-  }
-  
-  .button:hover {
-    background-color: #1f4f80;
-    border-color: transparent;
-  }
-  
-  .button-secondary {
-    color: #1976d2;
-    background-color: transparent;
-  }
-  
-  .button.disabled,
-  .button:disabled,
-  .button[disabled] {
-    background-color: #d9d9d9;
-    border-color: #d9d9d9;
-    color: #737373;
-  }
-  
-  input[type="submit"] {
-    background-color: #1976d2;
-    border-color: #1976d2;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #1f4f80;
-    border-color: transparent;
-    color: #ffffff;
-  }
-  
-  .dropdown .dropdown-toggle {
-    background-color: #1976d2;
-  }
-  
-  .dropdown .dropdown-toggle:hover,
-  .dropdown.open .dropdown-toggle {
-    background-color: #1f4f80;
-  }
-  
-  header .button {
-    background-color: #1f4f80;
-  }
-  
-  header .button:hover {
-    background-color: #133353; /* 36223f */
-  }
-  
-  .tab-nav a {
-    background-color: #1f4f80;
-    border-top: 0.3em solid #1f4f80;
-  }
-  
-  .tab-nav a:hover {
-    border-top: 0.3em solid #290041; /* 003f41 */
-  }
-  
-  .tab-nav.merged {
-    background-color: #1976d2;
-  }
-  
-  .button.yes {
-    background-color: #189370;
-    border: 1px solid #189370;
-  }
-  
-  .button.yes:hover {
-    color: #ffffff;
-    border-color: transparent;
-    background-color: #127055;
-  }
-  
-  .t-inverted .u-btn-current {
-    border-color: rgba(0, 0, 0, 0.35);
-  }
-  
-  .breadcrumb li a:after,
-  .breadcrumb li span:after {
-    color: #1f4f80;
-  }
-  
-  .breadcrumb li:hover {
-    background: #133353;
-  }
-  
-  @media screen and (min-width: 50em) {
-    .breadcrumb {
-      background-color: #185da1;
-    }
-  }
-  
-  .progress .bar {
-    background-color: #1976d2;
-  }
-  
-  .progress {
-    background-color: #133353;
-    border: 1px solid #1976d2;
-  }
-  
-  .loading-mask.loading:after {
-    color: #1976d2;
-  }
-  
-  .listing.chooser tbody tr:hover {
-    background-color: #1976d2;
-  }
-  
-  input[type="radio"]:checked:before {
-    color: #1976d2;
-  }
-  
-  input[type="checkbox"]:checked:before {
-    color: #1976d2;
-  }
-  
-  .page-explorer .listing .index {
-    background-color: #1976d2;
-  }
-  
-  .page-explorer .listing .index .button.bicolor {
-    background-color: #1976d2;
-  }
-  
-  .page-explorer .listing .index .button:hover {
-    background-color: #1f4f80;
-    border-color: transparent;
-  }
-  
-  .t-inverted .u-btn-current:hover {
-    background-color: #1f4f80;
-    border-color: rgba(0, 0, 0, 0.35);
-  }
-  
-  .t-default .u-btn-current {
-    border-color: rgba(0, 0, 0, 0.15);
-    color: #1976d2;
-  }
-  
-  .t-default .u-btn-current:hover {
-    background-color: #1f4f80;
-    border-color: rgba(0, 0, 0, 0.35);
-  }
-  
-  .listing .button-secondary:hover {
-    background-color: #1f4f80;
-    border-color: transparent;
-  }
-  
-  .listing .title h2 a:hover {
-    color: #1f4f80;
-  }
+.wagtail-logo-container-inner {
+  width: 100px !important;
+}
 
-  .object>h2 {
-    background: #faf2fc !important;
-  }
+a {
+  color: #0096d6;
+}
 
-  .object>h2 label:before,
-  .object>h2:before {
-    background-color: #1f4f80 !important;
+a:hover {
+  color: #1f4f80; /* 2a3c4a */
+}
+
+.button {
+  background-color: #0096d6;
+  border: 1px solid #0096d6;
+}
+
+.button:hover {
+  background-color: #1f4f80;
+  border-color: transparent;
+}
+
+.button-secondary {
+  color: #0096d6;
+  background-color: transparent;
+}
+
+.button.disabled,
+.button:disabled,
+.button[disabled] {
+  background-color: #d9d9d9;
+  border-color: #d9d9d9;
+  color: #737373;
+}
+
+input[type="submit"] {
+  background-color: #0096d6;
+  border-color: #0096d6;
+}
+
+input[type="submit"]:hover {
+  background-color: #1f4f80;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.dropdown .dropdown-toggle {
+  background-color: #0096d6;
+}
+
+.dropdown .dropdown-toggle:hover,
+.dropdown.open .dropdown-toggle {
+  background-color: #1f4f80;
+}
+
+header .button {
+  background-color: #1f4f80;
+}
+
+header .button:hover {
+  background-color: #133353; /* 36223f */
+}
+
+.tab-nav a {
+  background-color: #1f4f80;
+  border-top: 0.3em solid #1f4f80;
+}
+
+.tab-nav a:hover {
+  border-top: 0.3em solid #290041; /* 003f41 */
+}
+
+.tab-nav.merged {
+  background-color: #0096d6;
+}
+
+.button.yes {
+  background-color: #189370;
+  border: 1px solid #189370;
+}
+
+.button.yes:hover {
+  color: #ffffff;
+  border-color: transparent;
+  background-color: #127055;
+}
+
+.t-inverted .u-btn-current {
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.breadcrumb li a:after,
+.breadcrumb li span:after {
+  color: #1f4f80;
+}
+
+.breadcrumb li:hover {
+  background: #133353;
+}
+
+@media screen and (min-width: 50em) {
+  .breadcrumb {
+    background-color: #185da1;
   }
-  
-  .sequence-controls h3 label {
-    color: #1f4f80;
+}
+
+.progress .bar {
+  background-color: #0096d6;
+}
+
+.progress {
+  background-color: #133353;
+  border: 1px solid #0096d6;
+}
+
+.loading-mask.loading:after {
+  color: #0096d6;
+}
+
+.listing.chooser tbody tr:hover {
+  background-color: #0096d6;
+}
+
+input[type="radio"]:checked:before {
+  color: #0096d6;
+}
+
+input[type="checkbox"]:checked:before {
+  color: #0096d6;
+}
+
+.page-explorer .listing .index {
+  background-color: #0096d6;
+}
+
+.page-explorer .listing .index .button.bicolor {
+  background-color: #0096d6;
+}
+
+.page-explorer .listing .index .button:hover {
+  background-color: #1f4f80;
+  border-color: transparent;
+}
+
+.t-inverted .u-btn-current:hover {
+  background-color: #1f4f80;
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.t-default .u-btn-current {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #0096d6;
+}
+
+.t-default .u-btn-current:hover {
+  background-color: #1f4f80;
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.listing .button-secondary:hover {
+  background-color: #1f4f80;
+  border-color: transparent;
+}
+
+.listing .title h2 a:hover {
+  color: #1f4f80;
+}
+
+.object > h2 {
+  background: #faf2fc !important;
+}
+
+.object > h2 label:before,
+.object > h2:before {
+  background-color: #1f4f80 !important;
+}
+
+.sequence-controls h3 label {
+  color: #1f4f80;
+}
+
+@media screen and (min-width: 50em) {
+  .listing td.children:hover {
+    background-color: #1f4f80;
   }
-  
-  @media screen and (min-width: 50em) {
-    .listing td.children:hover {
-      background-color: #1f4f80;
-    }
+}
+
+.listing .children a {
+  color: #1f4f80;
+  display: block;
+}
+
+@media screen and (min-width: 50em) {
+  .listing tr:hover .children {
+    background-color: #0096d6;
   }
-  
-  .listing .children a {
-    color: #1f4f80;
-    display: block;
-  }
-  
-  @media screen and (min-width: 50em) {
-    .listing tr:hover .children {
-      background-color: #1976d2;
-    }
-  }
-  
-  /*
+}
+
+/*
   .halloeditor:focus,
   .tagit:focus,
   input:focus,
@@ -222,23 +226,23 @@ header {
   
   li.sequence-member:hover {
     background-color: #f2f2f3;
-    border-color: #1976d2;
+    border-color: #0096d6;
   }
   
   .listing .no-children a:hover {
-    color: #1976d2;
+    color: #0096d6;
   }
   
   */
-  
-  .dropdown ul {
-    background-color: #1976d2;
-  }
-  
-  .dropdown ul a:hover {
-    background-color: #1f4f80;
-  }
-  /*
+
+.dropdown ul {
+  background-color: #0096d6;
+}
+
+.dropdown ul a:hover {
+  background-color: #1f4f80;
+}
+/*
   .icon-bin {
     background-color: #cd3238;
     border: 1px solid #cd3238;
