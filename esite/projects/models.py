@@ -122,11 +122,14 @@ class ProjectsPage(Page):
         # ('code', blocks.RawHTMLBlock(null=True, blank=True, classname="full", icon='code'))
     ])
 
-    price_min = models.IntegerField(null=True, blank=False)
-    price_max = models.IntegerField(null=True, blank=True)
-    buy_available = models.BooleanField()
-    rent_available = models.BooleanField()
-    coordinates = models.CharField(null=True, blank=True, max_length=255)
+    price_min = models.IntegerField(
+        verbose_name="Preis der billigsten Einheit", null=True, blank=False)
+    price_max = models.IntegerField(
+        verbose_name="Preis der teuersten Einheit (leer lassen wenn nur eine Einheit vorhanden ist)", null=True, blank=True)
+    buy_available = models.BooleanField(verbose_name="Kaufmöglichkeit")
+    rent_available = models.BooleanField(verbose_name="Mietmöglichkeit")
+    coordinates = models.CharField(
+        verbose_name="Standpunkt (Koordinaten, z.B. Beispiel: 46.6120061,13.916085)", null=True, blank=True, max_length=255)
 
     sections = StreamField([
         ('s_info', _S_InfoBlock(icon='fa-info')),
@@ -142,7 +145,7 @@ class ProjectsPage(Page):
 
     flats = StreamField([
         ('f_flats', _F_FlatsBlock(icon='fa-info'))
-    ], null=True, blank=True)
+    ], verbose_name="Wohneinheiten-Pages", null=True, blank=True)
 
     # footers = StreamField([
     # ], null=True, blank=False)
@@ -189,9 +192,18 @@ class FlatPage(Page):
         # ('code', blocks.RawHTMLBlock(null=True, blank=True, classname="full", icon='code'))
     ])
 
-    price = models.IntegerField(null=True, blank=False)
+    price = models.IntegerField(verbose_name="Preis", null=True, blank=False)
+
+    br_choices = (
+        ('RENT', 'Miete'),
+        ('BUY', 'Kauf'),
+    )
+
+    buy_or_rent = models.CharField(
+        verbose_name="Mieten oder Kaufen?",
+        max_length=2, choices=br_choices, default='RENT')
     lead = models.CharField(null=True, blank=True, max_length=512)
-    available = models.BooleanField()
+    available = models.BooleanField(verbose_name="Verfügbar")
     # ground_plan = ImageChooserBlock(
     #     required=True, blank=False, help_text="Raumplan")
 
@@ -207,11 +219,12 @@ class FlatPage(Page):
 
     ground_plan = StreamField([
         ('p_groundplan', _P_GroundPlanBlock(icon='fa-info'))
-    ], null=True, blank=True)
+    ], null=True, blank=True, verbose_name="Grundrissplan")
 
     main_content_panels = [
         StreamFieldPanel('headers'),
         FieldPanel('price'),
+        FieldPanel('buy_or_rent'),
         FieldPanel('lead'),
         FieldPanel('available'),
         # FieldPanel('ground_plan'),
