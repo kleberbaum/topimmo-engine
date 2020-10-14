@@ -13,6 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='flatpage',
             name='buy_or_rent',
-            field=models.CharField(choices=[('RENT', 'Miete'), ('BUY', 'Kauf')], default='RENT', max_length=2),
+            field=models.CharField(
+                choices=[('RENT', 'Miete'), ('BUY', 'Kauf')], default='RENT', max_length=4),
         ),
     ]
