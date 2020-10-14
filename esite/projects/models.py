@@ -198,13 +198,13 @@ class FlatPage(Page):
     price = models.IntegerField(verbose_name="Preis", null=True, blank=False)
 
     br_choices = (
-        ('RENT', 'Miete'),
-        ('BUY', 'Kauf'),
+        ('RE', 'Miete'),
+        ('BU', 'Kauf'),
     )
 
     buy_or_rent = models.CharField(
         verbose_name="Mieten oder Kaufen?",
-        max_length=4, choices=br_choices, default='RENT')
+        max_length=4, choices=br_choices, default='RE')
     lead = models.CharField(null=True, blank=True, max_length=512)
     available = models.BooleanField(verbose_name="Verfügbar")
     # ground_plan = ImageChooserBlock(
