@@ -204,7 +204,7 @@ class FlatPage(Page):
 
     buy_or_rent = models.CharField(
         verbose_name="Mieten oder Kaufen?",
-        max_length=2, choices=br_choices, default='RENT')
+        max_length=4, choices=br_choices, default='RENT')
     lead = models.CharField(null=True, blank=True, max_length=512)
     available = models.BooleanField(verbose_name="Verfügbar")
     # ground_plan = ImageChooserBlock(
