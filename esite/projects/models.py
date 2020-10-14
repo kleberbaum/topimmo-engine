@@ -128,6 +128,8 @@ class ProjectsPage(Page):
         verbose_name="Preis der teuersten Einheit (leer lassen wenn nur eine Einheit vorhanden ist)", null=True, blank=True)
     buy_available = models.BooleanField(verbose_name="Kaufmöglichkeit")
     rent_available = models.BooleanField(verbose_name="Mietmöglichkeit")
+    location_name = models.CharField(
+        verbose_name="Ortsname (z.B. Villach-Landskron)", null=True, blank=True, max_length=255)
     coordinates = models.CharField(
         verbose_name="Standpunkt (Koordinaten, z.B. Beispiel: 46.6120061,13.916085)", null=True, blank=True, max_length=255)
 
@@ -163,6 +165,7 @@ class ProjectsPage(Page):
         FieldPanel('price_max'),
         FieldPanel('buy_available'),
         FieldPanel('rent_available'),
+        FieldPanel('location_name'),
         FieldPanel('coordinates'),
         StreamFieldPanel('sections'),
         StreamFieldPanel('gallery'),
