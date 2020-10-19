@@ -36,7 +36,7 @@ class Request(models.Model):
         get_latest_by = "date"
 
     def save(self, *args, **kwargs):
-        mail = "<p><img src='https://topimmo.aichner.cloud/esite/media/logo_topimmo.jpg' alt='Logo'></p>" + \
+        mail = "<p><img src='https://topimmo.aichner.cloud/media/logo_topimmo.jpg' alt='Logo'></p>" + \
             "<h1>Kundenanfrage " + self.title + "</h1>" + \
             "<p><b>Projekt:</b> " + self.link + "</p>" + \
             "<p><b>Kunde:</b> " + self.name + "</p>" + \
