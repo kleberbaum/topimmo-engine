@@ -12,3 +12,4 @@ django-cors-headers==3.2.0
 django-filter==2.2.0
 wagalytics==1.2
 python-dateutil==2.8.1
+sendgrid

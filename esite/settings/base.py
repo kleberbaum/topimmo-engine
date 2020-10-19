@@ -17,13 +17,13 @@ from datetime import timedelta
 env = os.environ.copy()
 
 
-#> Root paths
+# > Root paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
-#> Application definition
+# > Application definition
 # A list of strings designating all applications that are enabled in this
 # Django installation.
 # See https://docs.djangoproject.com/en/stable/ref/settings/#installed-apps
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     # https://intranet.torchbox.com/delivering-projects/tech/scoutapp/
     # According to the official docs, it's important that Scout is listed
     # first - http://help.apm.scoutapp.com/#django.
-    #'scout_apm.django',
+    # 'scout_apm.django',
 
     # Our own apps
     'esite.api',
@@ -49,13 +49,13 @@ INSTALLED_APPS = [
     'esite.caching',
     'esite.navigation',
     'esite.search',
-    #'esite.utils',
+    # 'esite.utils',
     'esite.colorfield',
 
     # Wagtail core apps
-    #'wagtail.api.v2',
+    # 'wagtail.api.v2',
     'wagtail.contrib.modeladmin',
-    #'wagtail.contrib.postgres_search',
+    # 'wagtail.contrib.postgres_search',
     'wagtail.contrib.settings',
     'wagtail.contrib.search_promotions',
     'wagtail.contrib.forms',
@@ -78,9 +78,9 @@ INSTALLED_APPS = [
     'taggit',
     'captcha',
     'wagtailcaptcha',
-    #"grapple",
+    # "grapple",
     "graphene_django",
-    #"channels",
+    # "channels",
     'wagalytics',
     'wagtailfontawesome',
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
@@ -99,7 +99,7 @@ INSTALLED_APPS = [
 ]
 
 
-#> Middleware classes
+# > Middleware classes
 # In MIDDLEWARE, each middleware component is represented by a string: the full
 # Python path to the middleware factory’s class or function name.
 # https://docs.djangoproject.com/en/stable/ref/settings/#middleware
@@ -112,7 +112,7 @@ MIDDLEWARE = [
     # According to the official documentation it should be listed underneath
     # SecurityMiddleware.
     # http://whitenoise.evans.io/en/stable/#quickstart-for-django-apps
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 
     # Django core middleware
     'django.middleware.security.SecurityMiddleware',
@@ -130,7 +130,7 @@ MIDDLEWARE = [
 ]
 
 
-#> Template definition
+# > Template definition
 # A list containing the settings for all template engines to be used with
 # Django.
 # See https://docs.djangoproject.com/en/stable/ref/settings/#templates
@@ -155,18 +155,18 @@ TEMPLATES = [
     },
 ]
 
-#> CORS origin
+# > CORS origin
 # If True, the whitelist will not be used and all origins will be accepted.
 # See https://pypi.org/project/django-cors-headers/
 CORS_ORIGIN_ALLOW_ALL = True
 
-#> URL configuration
+# > URL configuration
 # A string representing the full Python import path to your root URL configuration.
 # See https://docs.djangoproject.com/en/stable/ref/settings/#root-urlconf
 ROOT_URLCONF = 'esite.urls'
 
 
-#> WSGI application path
+# > WSGI application path
 # The full Python path of the WSGI application object that Django’s built-in
 # servers (e.g. runserver) will use.
 # See https://docs.djangoproject.com/en/stable/ref/settings/#wsgi-application
@@ -212,10 +212,10 @@ GRAPHQL_API = {
 }
 
 
-#> Grapple Config:
+# > Grapple Config:
 GRAPHENE = {
     'SCHEMA': 'esite.api.schema.schema',
-    #'SCHEMA': 'grapple.schema.schema',
+    # 'SCHEMA': 'grapple.schema.schema',
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
@@ -231,15 +231,15 @@ GRAPHQL_JWT = {
 
 GRAPPLE_APPS = {
     "home": "",
-    #"articles": "",
+    # "articles": "",
     "documents": "",
     "images": "",
-    #"news": "",
+    # "news": "",
     "people": "",
-    #"standardpages": "",
+    # "standardpages": "",
 }
 
-#> Password validation
+# > Password validation
 # The list of validators that are used to check the strength of passwords, see
 # https://docs.djangoproject.com/en/stable/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -279,7 +279,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-#> Staticfile directory
+# > Staticfile directory
 # This is where Django will look for static files outside the directories of
 # applications which are used by default.
 # https://docs.djangoproject.com/en/stable/ref/settings/#staticfiles-dirs
@@ -304,17 +304,17 @@ STATIC_URL = '/static/'
 # MEDIA_ROOT is not used when S3 backend is set up.
 # Probably only relevant to the local development.
 # https://docs.djangoproject.com/en/stable/ref/settings/#media-root
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'esite/media')
 
 
 # The URL path that media files will be accessible at. This setting won't be
 # used if S3 backend is set up.
 # Probably only relevant to the local development.
 # https://docs.djangoproject.com/en/stable/ref/settings/#media-url
-MEDIA_URL = '/media/'
+MEDIA_URL = '/esite/media/'
 
 
-#> Wagtail settings
+# > Wagtail settings
 
 
 # This name is displayed in the Wagtail admin.
