@@ -304,14 +304,14 @@ STATIC_URL = '/static/'
 # MEDIA_ROOT is not used when S3 backend is set up.
 # Probably only relevant to the local development.
 # https://docs.djangoproject.com/en/stable/ref/settings/#media-root
-MEDIA_ROOT = os.path.join(BASE_DIR, 'esite/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # The URL path that media files will be accessible at. This setting won't be
 # used if S3 backend is set up.
 # Probably only relevant to the local development.
 # https://docs.djangoproject.com/en/stable/ref/settings/#media-url
-MEDIA_URL = '/esite/media/'
+MEDIA_URL = '/media/'
 
 
 # > Wagtail settings

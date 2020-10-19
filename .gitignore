@@ -24,7 +24,7 @@ __pycache__/
 *.jpg
 *.png
 *.gif
-!esite/media/logo_topimmo.jpg
+!media/logo_topimmo.jpg
 #*.svg
 
 # Fonts
