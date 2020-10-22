@@ -133,9 +133,15 @@ if env.get('SECURE_CONTENT_TYPE_NOSNIFF', 'true').lower().strip() == 'true':
 
 
 # Sendgrid
-
 if 'SENDGRID_API_KEY' in env:
     SENDGRID_API_KEY = env['SENDGRID_API_KEY']
+
+if 'SENDGRID_RECEIVER_MAIL' in env:
+    SENDGRID_RECEIVER_MAIL = env['SENDGRID_RECEIVER_MAIL']
+
+if 'SENDGRID_AUDIT_MAIL' in env:
+    SENDGRID_AUDIT_MAIL = env['SENDGRID_AUDIT_MAIL']
+
 
 # Email settings
 # We use SMTP to send emails. We typically use transactional email services

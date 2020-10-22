@@ -36,7 +36,7 @@ class Request(models.Model):
         get_latest_by = "date"
 
     def save(self, *args, **kwargs):
-        mail = "<p><img src='https://topimmo.aichner.cloud/media/logo_topimmo.jpg' alt='Logo'></p>" + \
+        mail = "<p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p>" + \
             "<h1>Kundenanfrage " + self.title + "</h1>" + \
             "<p><b>Projekt:</b> " + self.link + "</p>" + \
             "<p><b>Kunde:</b> " + self.name + "</p>" + \
@@ -48,13 +48,8 @@ class Request(models.Model):
 
         message = Mail(
             from_email='inspiremedia-fwd@outlook.com',
-            to_emails='office@top-immo.org',
-            subject=subject,
-            html_content=mail)
-
-        message = Mail(
-            from_email='inspiremedia-fwd@outlook.com',
-            to_emails='audition@inspiremedia.at',
+            to_emails=[settings.SENDGRID_RECEIVER_MAIL,
+                       settings.SENDGRID_AUDIT_MAIL],
             subject=subject,
             html_content=mail)
 
