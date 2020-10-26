@@ -79,7 +79,8 @@ class Page(interface_cls):
     def resolve_url_path(self, info: ResolveInfo) -> str:
         self.url_path = cast(str, self.url_path)
         url_prefix = url_prefix_for_site(info)
-        url = self.url_path if not self.url_path.startswith(url_prefix) else self.url_path[len(url_prefix):]
+        url = self.url_path if not self.url_path.startswith(
+            url_prefix) else self.url_path[len(url_prefix):]
         return url.rstrip('/')
 
     if RELAY:
@@ -127,7 +128,8 @@ def PagesQueryMixin():  # noqa: C901
         if RELAY:
             pages = graphene.ConnectionField(PageConnection)
         else:
-            pages = graphene.List(Page, token=graphene.String(required=False), parent=graphene.Int())
+            pages = graphene.List(Page, token=graphene.String(
+                required=False), parent=graphene.Int())
 
         page = graphene.Field(Page,
                               token=graphene.String(required=False),
@@ -147,12 +149,11 @@ def PagesQueryMixin():  # noqa: C901
                                      parent=graphene.Int(required=True),
                                      )
 
-        @login_required
         def resolve_pages(self, info: ResolveInfo, parent: int = None, **_kwargs):
             # session authentication
-            #if info.context.user.is_anonymous:
+            # if info.context.user.is_anonymous:
             #    raise GraphQLError('You must be logged')
-            
+
             query = wagtailPage.objects
 
             # prefetch specific type pages
@@ -173,19 +174,19 @@ def PagesQueryMixin():  # noqa: C901
                 query.specific()
             ).live().order_by('path').all()
 
-        @login_required
         def resolve_page(self, info: ResolveInfo, id: int = None, url: str = None, revision: int = None, **_kwargs):
             # session authentication
-            #if info.context.user.is_anonymous:
+            # if info.context.user.is_anonymous:
             #    raise GraphQLError('You must be logged')
-            
+
             query = wagtailPage.objects
-            
+
             if id is not None:
                 query = query.filter(id=id)
             elif url is not None:
                 url_prefix = url_prefix_for_site(info)
-                query = query.filter(url_path=url_prefix + url.rstrip('/') + '/')
+                query = query.filter(
+                    url_path=url_prefix + url.rstrip('/') + '/')
             else:   # pragma: no cover
                 raise ValueError("One of 'id' or 'url' must be specified")
             page = with_page_permissions(
@@ -213,9 +214,9 @@ def PagesQueryMixin():  # noqa: C901
         @login_required
         def resolve_preview(self, info: ResolveInfo, id: int, **_kwargs):   # pragma: no cover
             # session authentication
-            #if info.context.user.is_anonymous:
+            # if info.context.user.is_anonymous:
             #    raise GraphQLError('You must be logged')
-            
+
             from wagtail.admin.views.pages import PreviewOnEdit
             request = info.context
             view = PreviewOnEdit(args=('%d' % id, ), request=request)
@@ -225,12 +226,13 @@ def PagesQueryMixin():  # noqa: C901
         def resolve_preview_add(self, info: ResolveInfo, app_name: str = 'wagtailcore',
                                 model_name: str = 'page', parent: int = None, **_kwargs):  # pragma: no cover
             # session authentication
-            #if info.context.user.is_anonymous:
+            # if info.context.user.is_anonymous:
             #    raise GraphQLError('You must be logged')
-            
+
             from wagtail.admin.views.pages import PreviewOnCreate
             request = info.context
-            view = PreviewOnCreate(args=(app_name, model_name, str(parent)), request=request)
+            view = PreviewOnCreate(
+                args=(app_name, model_name, str(parent)), request=request)
             page = _resolve_preview(request, view)
             page.id = 0  # force an id, since our schema assumes page.id is an Int!
             return page
@@ -243,9 +245,9 @@ def PagesQueryMixin():  # noqa: C901
         @login_required
         def resolve_show_in_menus(self, info: ResolveInfo, **_kwargs):
             # session authentication
-            #if info.context.user.is_anonymous:
+            # if info.context.user.is_anonymous:
             #    raise GraphQLError('You must be logged')
-            
+
             return with_page_permissions(
                 info.context,
                 wagtailPage.objects.filter(show_in_menus=True)
@@ -261,16 +263,16 @@ def InfoQueryMixin():
         @login_required
         def resolve_root(self, info: ResolveInfo, **_kwargs):
             # session authentication
-            #if info.context.user.is_anonymous:
+            # if info.context.user.is_anonymous:
             #    raise GraphQLError('You must be logged')
 
             # old session authentication
             #user = info.context.user
-            #if user.is_superuser:
+            # if user.is_superuser:
             #    return info.context.site
-            #else:
+            # else:
             #    return None
 
             return info.context.site
-    
+
     return Mixin
